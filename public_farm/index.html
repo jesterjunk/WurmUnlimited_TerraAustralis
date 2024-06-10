@@ -292,9 +292,11 @@ function generateGrid(grid, tileTypes) {
         if (tileInfo.label_visible) {
             const labelElement = document.createElement('div');
             labelElement.className = 'label';
+            const coming_soon_bush = tileInfo.type === `bush` ? `<span style="color: PeachPuff">coming soon ™<br><br></span>` : ``;
+            const coming_soon_tree = tileInfo.type === `tree` ? `<span style="color: PeachPuff">coming<br>soon ™<br><br></span>` : ``;
             const grid = tileInfo.grid ? `${tileInfo.grid}<br>` : ``;
             const skill = tileInfo.skill ? `<br><br>farm skill<br>${tileInfo.skill}` : ``;
-            labelElement.innerHTML = `${grid}${tileInfo.label}${skill}`;
+            labelElement.innerHTML = `${coming_soon_bush}${coming_soon_tree}${grid}${tileInfo.label}${skill}`;
             tileElement.appendChild(labelElement);
         }
 
