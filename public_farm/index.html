@@ -140,14 +140,14 @@ const grid = `
 const grid_tile_types = {
     "0": {"type": "terrain",   "label": "Grass",               "label_visible": 0,    "skill": 0,     "tile": "grass",      "grid": "",       "count": "1480",    "planted": 1 },
     "1": {"type": "paving",    "label": "Pottery",             "label_visible": 0,    "skill": 0,     "tile": "pottery",    "grid": "",       "count": "1210",    "planted": 1 },
-    "2": {"type": "tree",      "label": "Apple",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "3": {"type": "tree",      "label": "Cherry",              "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "4": {"type": "tree",      "label": "Lemon",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "5": {"type": "tree",      "label": "Olive",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "6": {"type": "tree",      "label": "Acorn",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "7": {"type": "tree",      "label": "Chestnut",            "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "8": {"type": "tree",      "label": "Pinenut",             "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
-    "9": {"type": "tree",      "label": "Walnut",              "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x9",    "count": "95",      "planted": 0 },
+    "2": {"type": "tree",      "label": "Apple",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "3": {"type": "tree",      "label": "Cherry",              "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "4": {"type": "tree",      "label": "Lemon",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "5": {"type": "tree",      "label": "Olive",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "6": {"type": "tree",      "label": "Acorn",               "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "7": {"type": "tree",      "label": "Chestnut",            "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "8": {"type": "tree",      "label": "Pinenut",             "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
+    "9": {"type": "tree",      "label": "Walnut",              "label_visible": 1,    "skill": 0,     "tile": "slab",       "grid": "5x19",    "count": "95",      "planted": 0 },
     "a": {"type": "crop",      "label": "Potato",              "label_visible": 1,    "skill": 4,     "tile": "farm",       "grid": "9x9",    "count": "81",      "planted": 1 },
     "b": {"type": "crop",      "label": "Cotton",              "label_visible": 1,    "skill": 7,     "tile": "farm",       "grid": "9x9",    "count": "81",      "planted": 1 },
     "c": {"type": "crop",      "label": "Rye",                 "label_visible": 1,    "skill": 10,    "tile": "farm",       "grid": "9x9",    "count": "81",      "planted": 1 },
@@ -238,46 +238,7 @@ function generateGrid(grid, tileTypes) {
     const visited = Array.from({ length: col_length }, () => Array(row_length).fill(false));
 
     function isCrop(tile) {
-        return tile === `2` ||
-               tile === `3` ||
-               tile === `4` ||
-               tile === `5` ||
-               tile === `6` ||
-               tile === `7` ||
-               tile === `8` ||
-               tile === `9` ||
-               tile === `a` ||
-               tile === `b` ||
-               tile === `c` ||
-               tile === `d` ||
-               tile === `e` ||
-               tile === `f` ||
-               tile === `g` ||
-               tile === `h` ||
-               tile === `i` ||
-               tile === `j` ||
-               tile === `k` ||
-               tile === `l` ||
-               tile === `m` ||
-               tile === `n` ||
-               tile === `o` ||
-               tile === `p` ||
-               tile === `q` ||
-               tile === `r` ||
-               tile === `s` ||
-               tile === `t` ||
-               tile === `u` ||
-               tile === `v` ||
-               tile === `w` ||
-               tile === `x` ||
-               tile === `D` ||
-               tile === `E` ||
-               tile === `F` ||
-               tile === `G` ||
-               tile === `H` ||
-               tile === `I` ||
-               tile === `J` ||
-               tile === `K`;
+        return "23456789abcdefghijklmnopqrstuvwxDEFGHIJK".includes(tile);
     }
 
     function createTile(x, y, width, height, tileInfo) {
